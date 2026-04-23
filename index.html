@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Island</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <div class="ambient ambient-left"></div>
+      <div class="ambient ambient-right"></div>
+
+      <section
+        class="weather-island"
+        id="weather-island"
+        tabindex="0"
+        aria-live="polite"
+        aria-label="当前天气活动"
+      >
+        <div class="island-collapsed" aria-hidden="true">
+          <div class="pill pill-temp">
+            <span class="temp-dot"></span>
+            <span id="collapsed-temp">--°</span>
+          </div>
+          <div class="pill pill-empty"></div>
+        </div>
+
+        <div class="island-expanded">
+          <header class="expanded-header">
+            <div>
+              <p class="eyebrow">Live Weather</p>
+              <h1 id="location-name">正在定位...</h1>
+            </div>
+            <div class="weather-badge" id="weather-badge">--</div>
+          </header>
+
+          <section class="hero-row">
+            <div>
+              <p class="label">当前温度</p>
+              <div class="hero-temp"><span id="hero-temp">--</span><span>°C</span></div>
+              <p class="summary" id="weather-summary">准备获取天气数据</p>
+            </div>
+            <div class="hero-icon" id="hero-icon">☀</div>
+          </section>
+
+          <section class="detail-grid">
+            <article class="detail-card">
+              <p class="label">体感</p>
+              <p class="detail-value" id="apparent-temp">--°C</p>
+            </article>
+            <article class="detail-card">
+              <p class="label">风速</p>
+              <p class="detail-value" id="wind-speed">-- km/h</p>
+            </article>
+            <article class="detail-card">
+              <p class="label">湿度</p>
+              <p class="detail-value" id="humidity">--%</p>
+            </article>
+            <article class="detail-card">
+              <p class="label">刷新时间</p>
+              <p class="detail-value" id="updated-at">--:--</p>
+            </article>
+          </section>
+
+          <footer class="expanded-footer">
+            <span id="status-text">等待定位权限...</span>
+            <button id="refresh-btn" type="button">刷新天气</button>
+          </footer>
+        </div>
+      </section>
+    </main>
+
+    <script src="./script.js" defer></script>
+  </body>
+</html>

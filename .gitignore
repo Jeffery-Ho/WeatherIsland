@@ -1,0 +1,10 @@
+.DS_Store
+.build/
+.swiftpm/
+dist/
+dist-build/
+dist-dmg/
+/WeatherIsland-macOS.dmg
+/DerivedData/
+xcuserdata/
+*.xcuserstate
